@@ -8,7 +8,7 @@ to compile this program,please go to terminal and direct to this application fol
 $ gcc multithread_server.c -o mserver
 $ gcc gcc multithread_client.c -o mclient
 
-this will compile these two programs separately.
+please compile these two programs separately.
 
 to start the char server, you can simply enter the following command on the terminal:
 $ ./mserver
