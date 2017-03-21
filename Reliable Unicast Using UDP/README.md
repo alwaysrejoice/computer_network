@@ -53,6 +53,7 @@ step 6.receiver sorts the data packages based on the order in case of having dif
 step 7. receiver check data integrity based on checking if total packages they get equal to SIZE which is stored in the every package.
 
 step 8. if reciever does not get total packages, it would request sender to send the packages that it doesn't get yet.
+
 step 9. Once the reciever make sure the data is intrgral, write data into file and output to output.txt, the ourput file would be in the same directory as program.
 
 
