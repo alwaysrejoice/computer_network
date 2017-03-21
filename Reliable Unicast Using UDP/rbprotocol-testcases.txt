@@ -1,0 +1,66 @@
+These are test cases to test UDP reliable unicast application.
+#Written date 3/20/2017
+
+
+
+Test case 1:
+
+Aim:test if sender and receiver can be open in different order
+
+Implement: open sender first, then open reciever
+
+Result: when the sender start, it will start to send the data regardless whether or not there is a receiver. Sender will send the data repeatly. When the receiver come in the port and start to receive the data at any time, the receiver might receive different message from sender. Based on what message the receiver get, it would do the different action.
+
+Implement: open reciever first, then open sender
+
+Result: When the reciever start first, it must wait for the message from sender. When the sender send message to the port, the reciever will get the message.
+
+Test case 2:
+
+Aim: test if receiver can get completed file from sender under the condition of loss percent 0.
+
+Implement: start the receiver, then start the sender
+
+Result: when receiver receive the whole file, it must output the file, then shut down automatically. You can check if the file same as the original one. (Default test file is rbprotocol-testcases.txt, which is me)
+
+Test case 3:
+
+Aim: test unreliable simulation.
+
+Implement: start the receiver and specify loss percent with 50 for example, then start the sender
+
+Result: receiver will show data loss randomly with 50% chance. when receiver receives the whole file. Check the output file. It must be same as the original file.
+
+Test case 4:
+
+Aim: test timeout mechenism in receiver and sender program.
+
+Implement: open the sender only.
+
+Result: sender will send the data, when whole data sent is done The sender will send request message to receiver,  then waiting for the receiver's response. If receiver has no response, after 5 seconds, the sender will try to send request message again. After three times with no response from reciever, the sender will rerstart to send the whole packages again.
+
+Implement: open the receiver only.
+
+Result: receiver will waiting for the sender's message. If there is no sender send message, after 5 seconds, the receiver would print "no sender send packages yet." message on the terminal. and continue to wait the sender.
+
+
+Test case 5:
+
+Aim: test ack and nack response
+
+Implement: open the receiver with 50 loss percent, then open the sender
+
+Result: receiver will pretend data loss randomly with 50% chance. When sender finished to send the whole data, it will send check message to receiver. The receiver will response to sender with nack and which number of package not to get if it does not get whole packages. If the receiver receive the whole packages, it would send "ack" to sender. Sender would response to receiver "all finished". Then the receiver will shot down automatically.
+
+
+
+
+
+
+
+
+
+
+
+
+

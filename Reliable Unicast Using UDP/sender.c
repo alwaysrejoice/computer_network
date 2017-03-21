@@ -36,7 +36,7 @@ int main(int argc, char* argv[]){
         exit(1);
     }
     
-    char* file_name="chatroom_testcase.txt";
+    char* file_name="rbprotocol-testcases.txt";
     int c;
     while((c=getopt(argc,argv,"p:f:h"))!=-1){
         switch (c) {

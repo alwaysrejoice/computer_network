@@ -24,7 +24,7 @@ int recieve_port=6000;
 
 void usage_se(char* argv)
 {
-    printf("There is a default test file and port, which is 6000\n");
+    printf("There is a default test file which is rbprotocol-testcases.txt and a default port which is 6000\n");
     printf("but you can specify another port and new file.\n");
     printf("usage: %s [-p 1~65535] [-f string]\n", argv);
     printf("		-p <port>\n");
