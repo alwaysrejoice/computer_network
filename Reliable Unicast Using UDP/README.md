@@ -27,6 +27,7 @@ if you would like to change the port number, sender and receiver must be specifi
 
 
 Data synchronization design
+
 step 1. In the sender side, break file into small chunks and store them in a structure, the structure looks as follows:
 
 typedef struct
